@@ -7,6 +7,7 @@ const ContactForm = () => {
     mode: "onBlur",
   });
   const onSubmit = (data) => {
+
     setData(data);
   };
 
@@ -17,12 +18,13 @@ const ContactForm = () => {
           <label htmlFor="firstName">First Name*</label>
           <input
             name="firstName"
+            type="text"
             data-testid="firstName"
-            placeholder="Edd"
-            ref={register({ required: true, maxLength: 3 })}
+
+            ref={register({ required: true, minLength: 2 })}
           />
           {errors.firstName && (
-            <p>Looks like there was an error: {errors.firstName.type}</p>
+            <p data-testid="firstName-error">Looks like there was an error: {errors.firstName.type}</p>
           )}
         </div>
 
@@ -30,34 +32,41 @@ const ContactForm = () => {
           <label htmlFor="lastName">Last Name*</label>
           <input
             name="lastName"
-            placeholder="Burke"
+            type="text"
+
             data-testid="lastName"
             ref={register({ required: true })}
           />
           {errors.lastName && (
-            <p>Looks like there was an error: {errors.lastName.type}</p>
+            <p data-testid="lastName-error">Looks like there was an error: {errors.lastName.type}</p>
           )}
         </div>
 
         <div>
-          <label htmlFor="email" placeholder="bluebill1049@hotmail.com" data-testid="email">
+          <label htmlFor="email">
             Email*
           </label>
-          <input name="email" ref={register({ required: true })} />
+          <input 
+          name="email"  
+          type="email"
+          data-testid="email" 
+          ref={register({ required: true})} />
           {errors.email && (
-            <p>Looks like there was an error: {errors.email.type}</p>
+            <p data-testid="email-error">Looks like there was an error: {errors.email.type}</p>
           )}
         </div>
         <div>
-          <label htmlFor="message" data-testid="message">Message</label>
-          <textarea name="message" ref={register({ required: false })} />
+          <label htmlFor="message" >Message</label>
+          <textarea name="message" data-testid="message" ref={register({ required: false })} />
         </div>
         {data && (
+          <div data-testid='print-out'>
           <pre style={{ textAlign: "left", color: "white" }}>
             {JSON.stringify(data, null, 2)}
           </pre>
+          </div>
         )}
-        <input type="submit" />
+        <input data-testid="submit" type="submit" />
       </form>
     </div>
   );

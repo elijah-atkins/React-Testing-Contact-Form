@@ -44,19 +44,19 @@ In order to complete your mission for today, you will need to write tests to hel
 
 _If you come across any "unexpected" behaviors in the form UI (not the test), try this flow:_
 
-- [ ] You may have noticed that the form validation for one of the inputs is a little off...
-- [ ] Write a test for the "expected" behavior (it will fail because something in the component is doing something unexpected)
-- [ ] Confirm that the test fails, because of the "unexpected" behavior
-- [ ] Look at the code in the project to find what is causing the behavior
-- [ ] Fix the code so that your new test passes
-- [ ] Celebrate that your test helped you find and fix a bug!
+- [x] You may have noticed that the form validation for one of the inputs is a little off...
+- [x] Write a test for the "expected" behavior (it will fail because something in the component is doing something unexpected)
+- [x] Confirm that the test fails, because of the "unexpected" behavior
+- [x] Look at the code in the project to find what is causing the behavior
+- [x] Fix the code so that your new test passes
+- [x] Celebrate that your test helped you find and fix a bug!
 
 ## Stretch goals
 
 - Using the [REQ|RES API](https://reqres.in/), build out a POST request in the form.
 
-  - Using the [React Testing Library Docs](https://testing-library.com/docs/react-testing-library/intro), study how to test async calls
-  - Write a new test to cover your new async call
+ [x] - Using the [React Testing Library Docs](https://testing-library.com/docs/react-testing-library/intro), study how to test async calls
+  [x]- Write a new test to cover your new async call
 
 - Add more elements to the form - eg dropdown, checkbox, etc
   - Add tests to include the new form elements
